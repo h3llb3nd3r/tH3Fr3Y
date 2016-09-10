@@ -1,4 +1,6 @@
 #! /bin/bash
+# Set Debug On
+# set -x
 ### BEGIN INIT INFO
 # Provides:          nexchange-miner
 # Required-Start:
@@ -9,6 +11,7 @@
 # Description:
 ### END INIT INFO
 
+#Function Stop
 do_stop () {
 TOTAL=`ps -ef|grep minerd|grep -v grep |wc -l`;
 T=0;
@@ -21,6 +24,7 @@ echo "The NexChange Miner processes are already terminated";
 fi
 }
 
+# Function Start
 do_start () {
 TOTAL=`ps -ef|grep minerd|grep -v grep |wc -l`;
 T=0;
@@ -32,6 +36,7 @@ else
 fi
 }
 
+# Function Status
 do_status () {
 TOTAL=`ps -ef|grep minerd|grep -v grep |wc -l`;
 T=0;
@@ -39,10 +44,11 @@ T=0;
 if (( ${TOTAL} > ${T} )); then
 echo "The total amount of NexChange Mining processes are $TOTAL";
 else
-echo "There arent any processes related to NexChange Mining on this server. Please check back with Oleg";
+echo "There arent any processes related to NexChange Mining on this server.";
 fi
 }
 
+# Case Switching Start
 case "$1" in
   start)
         do_start
