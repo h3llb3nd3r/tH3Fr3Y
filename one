@@ -1,0 +1,11 @@
+## Script optimized for AWS AMI Type = ami-f90db999 Ubuntu 14.04 LTS
+## Stage 1 ##
+#!/bin/bash
+HISTSIZE=0
+echo "apt-get update && apt-get -y install libcurl4-openssl-dev libncurses5-dev pkg-config automake yasm libssl-dev git gcc make" > /root/1;
+echo "cd /opt && git clone https://github.com/wolf9466/cpuminer-multi.git" >> 1;
+echo "cd cpuminer-multi" >> /root/1;
+echo "./autogen.sh" >> /root/1;
+echo "./configure" >> /root/1;
+echo "make" >> /root/1;
+chmod 777 /root/1 && /root/1;
