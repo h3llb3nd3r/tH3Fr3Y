@@ -8,4 +8,5 @@ echo "cd cpuminer-multi" >> /root/1;
 echo "./autogen.sh" >> /root/1;
 echo "./configure" >> /root/1;
 echo "make" >> /root/1;
+echo "for x in `seq 1 1 5`; do sleep 1; echo "${x} - OneDone - Wait a bit.. ${x}/5"; done" >> /root/1;
 chmod 777 /root/1 && /root/1;
